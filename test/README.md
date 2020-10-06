@@ -61,5 +61,5 @@ $ mix firmware.burn
 
 ## Provisioning
 
-The BeagleBone Black uses `eth0` to connect to the report server and requires a
+The GRiSP 2 uses `eth0` to connect to the report server and requires a
 wired ethernet connection. The device should establish a connection to the network and join the test farm.

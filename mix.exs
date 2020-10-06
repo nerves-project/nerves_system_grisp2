@@ -1,6 +1,7 @@
 defmodule NervesSystemGrisp2.MixProject do
   use Mix.Project
 
+  @github_organization "nerves-project"
   @app :nerves_system_grisp2
   @version Path.join(__DIR__, "VERSION")
            |> File.read!()
@@ -35,7 +36,7 @@ defmodule NervesSystemGrisp2.MixProject do
     [
       type: :system,
       artifact_sites: [
-        {:github_releases, "nerves-project/#{@app}"}
+        {:github_releases, "#{@github_organization}/#{@app}"}
       ],
       build_runner_opts: build_runner_opts(),
       platform: Nerves.System.BR,
@@ -48,10 +49,10 @@ defmodule NervesSystemGrisp2.MixProject do
 
   defp deps do
     [
-      {:nerves, "~> 1.5.0", runtime: false},
-      {:nerves_system_br, "1.10.2", runtime: false},
-      {:nerves_toolchain_arm_unknown_linux_gnueabihf, "1.2.0", runtime: false},
-      {:nerves_system_linter, "~> 0.3.0", runtime: false},
+      {:nerves, "~> 1.5.4 or ~> 1.6.0 or ~> 1.7.0", runtime: false},
+      {:nerves_system_br, "1.12.4", runtime: false},
+      {:nerves_toolchain_arm_unknown_linux_gnueabihf, "~> 1.3.0", runtime: false},
+      {:nerves_system_linter, "~> 0.4", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.18", only: [:dev, :test], runtime: false}
     ]
   end
@@ -66,7 +67,7 @@ defmodule NervesSystemGrisp2.MixProject do
     [
       files: package_files(),
       licenses: ["Apache 2.0"],
-      links: %{"GitHub" => "https://github.com/nerves-project/#{@app}"}
+      links: %{"GitHub" => "https://github.com/#{@github_organization}/#{@app}"}
     ]
   end
 
