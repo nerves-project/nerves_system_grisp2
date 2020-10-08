@@ -11,7 +11,7 @@
 
 / {
 	model = "GRiSP2";
-	compatible = "embeddedbrains,grisp2", "phytec,imx6ul-pbacd-10", "phytec,imx6ul-pcl063", "fsl,imx6ul";
+	compatible = "embeddedbrains,grisp2", "phytec,imx6ull-pbacd-10", "phytec,imx6ull-pbacd10", "fsl,imx6ull";
 
 	aliases {
 #ifdef GRISP_IMX6ULL_Y0
