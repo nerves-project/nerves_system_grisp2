@@ -54,6 +54,7 @@
 			linux,default-trigger = "none";
 			default-state = "off";
 		};
+#if 0 /* Not working on Linux */
 		grisp-rgb2-green {
 			gpios = <&gpio5 5 GPIO_ACTIVE_HIGH>;
 			label = "rgb2:green";
@@ -66,6 +67,7 @@
 			linux,default-trigger = "none";
 			default-state = "off";
 		};
+#endif
 	};
 
 	reg_usb1: regulator-usb1 {
@@ -319,8 +321,10 @@
 			MX6UL_PAD_SNVS_TAMPER1__GPIO5_IO01	0x00088
 			MX6UL_PAD_SNVS_TAMPER2__GPIO5_IO02	0x00088
 			MX6UL_PAD_SNVS_TAMPER3__GPIO5_IO03	0x00088
+#if 0 /* Not working on Linux */
 			MX6UL_PAD_SNVS_TAMPER5__GPIO5_IO05	0x00088
 			MX6UL_PAD_SNVS_TAMPER9__GPIO5_IO09	0x00088
+#endif
 		>;
 	};
 };
