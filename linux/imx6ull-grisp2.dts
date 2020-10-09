@@ -294,8 +294,6 @@
 	};
 #endif
 
-	/delete-node/ gpioledssomgrp;
-
 	pinctrl_spi0: spi0grp {
 		fsl,pins = <
 			MX6UL_PAD_CSI_DATA04__ECSPI1_SCLK	0x8
@@ -315,12 +313,6 @@
 };
 
 &iomuxc_snvs {
-	pinctrl_gpioleds_som: gpioledssomgrp {
-		fsl,pins = <
-			MX6ULL_PAD_SNVS_TAMPER4__GPIO5_IO04	0x0b0b0
-		>;
-	};
-
 	pinctrl_gpioleds_grisp2: gpioledsgrisp2grp {
 		fsl,pins = <
 			MX6UL_PAD_SNVS_TAMPER0__GPIO5_IO00	0x00088
