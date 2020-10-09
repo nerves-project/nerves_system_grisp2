@@ -28,24 +28,43 @@
 		pinctrl-names = "default";
 		pinctrl-0 = <&pinctrl_gpioleds_grisp2>;
 		compatible = "gpio-leds";
+		status = "okay";
 
 		grisp-rgb1-red {
 			gpios = <&gpio5 0 GPIO_ACTIVE_HIGH>;
+			label = "rgb1:red";
+			linux,default-trigger = "none";
+			default-state = "off";
 		};
 		grisp-rgb1-green {
 			gpios = <&gpio5 1 GPIO_ACTIVE_HIGH>;
+			label = "rgb1:green";
+			linux,default-trigger = "none";
+			default-state = "off";
 		};
 		grisp-rgb1-blue {
 			gpios = <&gpio5 2 GPIO_ACTIVE_HIGH>;
+			label = "rgb1:blue";
+			linux,default-trigger = "none";
+			default-state = "off";
 		};
 		grisp-rgb2-red {
 			gpios = <&gpio5 3 GPIO_ACTIVE_HIGH>;
+			label = "rgb2:red";
+			linux,default-trigger = "none";
+			default-state = "off";
 		};
 		grisp-rgb2-green {
 			gpios = <&gpio5 5 GPIO_ACTIVE_HIGH>;
+			label = "rgb2:green";
+			linux,default-trigger = "none";
+			default-state = "off";
 		};
 		grisp-rgb2-blue {
 			gpios = <&gpio5 9 GPIO_ACTIVE_HIGH>;
+			label = "rgb2:blue";
+			linux,default-trigger = "none";
+			default-state = "off";
 		};
 	};
 
