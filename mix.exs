@@ -104,7 +104,6 @@ defmodule NervesSystemGrisp2.MixProject do
       "linux",
       "rootfs_overlay",
       "uboot",
-      "busybox.fragment",
       "CHANGELOG.md",
       "fwup-revert.conf",
       "fwup.conf",
