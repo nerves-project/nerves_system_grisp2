@@ -7,6 +7,21 @@ This might be the base Nerves System configuration for the [GRiSP
 I was using a [PHYTEC
 phyBOARD-Segin](https://phytec.com/product/phyboard-imx6ul-segin/).
 
+To do:
+
+- [ ] Update Linux kernel to 5.10
+- [ ] Bring up WiFi
+- [ ] See if U-Boot works since this will be easier than porting to Barebox
+- [ ] Check that A/B firmware updates work
+- [ ] Verify RGB LEDs
+- [ ] Verify DIP switches
+- [ ] Enable 1-Wire and test
+- [ ] Verify SPI
+- [ ] Verify MicroSD card works
+- [ ] Verify ATECC608B
+- [ ] Check that `TARGET_GCC_FLAGS` are right
+- [ ] Create example app that uses GRiSP2? Perhaps Nerves Livebook?
+
 ![GRiSP 2 image](assets/images/grisp2.jpg)
 
 | Feature              | Description                     |
