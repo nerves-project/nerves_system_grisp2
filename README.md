@@ -34,7 +34,7 @@ To do:
 
 | Feature              | Description                     |
 | -------------------- | ------------------------------- |
-| CPU                  | NSP iMX6UL, ARM ARM Cortex-A7 @ 696 MHz |
+| CPU                  | NXP iMX6ULL, ARM Cortex-A7 @ 696 MHz |
 | Memory               | 128 MB DRAM                     |
 | Storage              | 4 GB eMMC Flash and MicroSD     |
 | Linux kernel         | 4.14 w/ Phytec patches          |
