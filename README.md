@@ -18,13 +18,17 @@ To do:
 - [x] Verify MicroSD card works
 - [ ] Verify ATECC608B
 - [ ] Verify HW watchdog
+- [ ] Add ramoops support
 - [ ] Review GRiSP2 specs to see what else there is to verify
 - [x] Check that `TARGET_GCC_FLAGS` are right
 - [ ] Update Linux kernel to 5.10
 - [ ] Update Nerves Toolchain 1.5.0 version
 - [ ] See if U-Boot works since this will be easier than porting to Barebox
 - [ ] Check that A/B firmware updates work
+- [ ] Nerves on eMMC or MicroSD? How to auto boot?
 - [ ] Create example app that uses GRiSP2? Perhaps Nerves Livebook?
+- [ ] Review Linux kernel options and compare with other systems
+- [ ] Reduce kernel prints, etc., to boot faster
 
 ![GRiSP 2 image](assets/images/grisp2.jpg)
 
