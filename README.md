@@ -3,23 +3,27 @@
 [![CircleCI](https://circleci.com/gh/fhunleth/nerves_system_grisp2.svg?style=svg)](https://circleci.com/gh/fhunleth/nerves_system_grisp2)[![Hex version](https://img.shields.io/hexpm/v/nerves_system_grisp2.svg "Hex version")](https://hex.pm/packages/nerves_system_grisp2)
 
 This might be the base Nerves System configuration for the [GRiSP
-2](http://grisp.org/). I haven't had a chance to work on it and last time I did,
-I was using a [PHYTEC
-phyBOARD-Segin](https://phytec.com/product/phyboard-imx6ul-segin/).
+2](http://grisp.org/).
+
+*This is a work in progress and many things don't work*
 
 To do:
 
-- [ ] Update Linux kernel to 5.10
+- [x] Bring up Ethernet
 - [ ] Bring up WiFi
-- [ ] See if U-Boot works since this will be easier than porting to Barebox
-- [ ] Check that A/B firmware updates work
-- [ ] Verify RGB LEDs
+- [x] Verify RGB LEDs
 - [ ] Verify DIP switches
 - [ ] Enable 1-Wire and test
 - [ ] Verify SPI
-- [ ] Verify MicroSD card works
+- [x] Verify MicroSD card works
 - [ ] Verify ATECC608B
-- [ ] Check that `TARGET_GCC_FLAGS` are right
+- [ ] Verify HW watchdog
+- [ ] Review GRiSP2 specs to see what else there is to verify
+- [x] Check that `TARGET_GCC_FLAGS` are right
+- [ ] Update Linux kernel to 5.10
+- [ ] Update Nerves Toolchain 1.5.0 version
+- [ ] See if U-Boot works since this will be easier than porting to Barebox
+- [ ] Check that A/B firmware updates work
 - [ ] Create example app that uses GRiSP2? Perhaps Nerves Livebook?
 
 ![GRiSP 2 image](assets/images/grisp2.jpg)
@@ -32,6 +36,7 @@ To do:
 | Linux kernel         | 4.14 w/ Phytec patches          |
 | IEx terminal         | ttyS0                           |
 | GPIO, I2C, SPI       | Yes - [Elixir Circuits](https://github.com/elixir-circuits) |
+| LEDs                 | Yes - grisp-rgb[12]-(red|blue|green) via `sys/class/leds` |
 | ADC                  | -                               |
 | PWM                  | -                               |
 | UART                 | ttyS0-ttyS4                     |
@@ -51,12 +56,24 @@ If you need custom modifications to this system for your device, clone this
 repository and update as described in [Making custom
 systems](https://hexdocs.pm/nerves/systems.html#customizing-your-own-nerves-system)
 
-## Preparing the PHYTEC phyBOARD-Segin
+## Boot notes
 
-The phyBOARD-Segin defaults to booting off an integrated NAND Flash. The
-GRiSP 2 will have an eMMC Flash instead, so support for NAND has been disabled.
-In the interim, this system only supports booting off the MicroSD card slot. To
-enable this, place a jumper across J1.
+This system isn't ready for general use. If you know how to build a Nerves
+system, then it will probably be a little frustrating, but you'll get something
+to boot.
+
+1. Build the system
+2. Create a test Nerves project or modify `circuits_quickstart` to use it. Until
+   the Linux kernel is updated, you'll have to delete all other Nerves systems
+   to avoid dependency conflicts on the toolchain.
+3. Build the project and burn a MicroSD card with it
+4. Boot the GRiSP2, but press a key to break into the bootloader.
+5. Run:
+
+    ```
+    global linux.bootargs.dyn.root="root=/dev/mmcblk0p2 rootwait"
+    bootm -o /mnt/mmc/oftree /mnt/mmc/zImage
+    ```
 
 ## Console access
 
