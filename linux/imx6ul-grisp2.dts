@@ -231,21 +231,15 @@
 &usbotg1 {
 	pinctrl-names = "default";
 	dr_mode = "host";
-	status = "okay";
-};
-
-&usbphy1 {
 	vbus-supply = <&reg_usb1>;
+	status = "okay";
 };
 
 &usbotg2 {
 	dr_mode = "host";
+	vbus-supply = <&reg_usb2>;
 	disable-over-current;
 	status = "okay";
-};
-
-&usbphy2 {
-	vbus-supply = <&reg_usb2>;
 };
 
 &usdhc1 {
