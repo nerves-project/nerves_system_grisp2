@@ -10,7 +10,7 @@ This might be the base Nerves System configuration for the [GRiSP
 To do:
 
 - [x] Bring up Ethernet
-- [ ] Bring up WiFi
+- [x] Bring up WiFi (currently requires unreleased VintageNetWiFi)
 - [x] Verify RGB LEDs
 - [ ] Verify DIP switches
 - [ ] Enable 1-Wire and test
@@ -40,7 +40,7 @@ To do:
 | Linux kernel         | 4.14 w/ Phytec patches          |
 | IEx terminal         | ttyS0                           |
 | GPIO, I2C, SPI       | Yes - [Elixir Circuits](https://github.com/elixir-circuits) |
-| LEDs                 | Yes - grisp-rgb[12]-(red|blue|green) via `sys/class/leds` |
+| LEDs                 | Yes - grisp-rgb[12]-(red or blue or green) via `sys/class/leds` |
 | ADC                  | -                               |
 | PWM                  | -                               |
 | UART                 | ttyS0-ttyS4                     |
