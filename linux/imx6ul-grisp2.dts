@@ -4,12 +4,12 @@
  */
 
 /dts-v1/;
-#include "custom-imx6ul.dtsi"
-#include "imx6ul-phytec-phycore-som.dtsi"
+#include "imx6ull.dtsi"
+#include "imx6ull-phytec-phycore-som.dtsi"
 
 / {
 	model = "GRiSP2";
-	compatible = "embeddedbrains,grisp2", "phytec,imx6ul-pcl063-emmc", "fsl,imx6ull";
+	compatible = "embeddedbrains,grisp2", "phytec,imx6ull-pcl063-emmc", "fsl,imx6ull";
 
 	gpio_leds_grisp2: leds {
 		pinctrl-names = "default";
