@@ -23,17 +23,18 @@ To do:
 - [x] Check that `TARGET_GCC_FLAGS` are right
 - [ ] Update Linux kernel to 5.10
 - [ ] Update Nerves Toolchain 1.5.0 version
-- [ ] Implement A/B firmware updates work
+- [x] Implement A/B firmware updates work
 - [ ] Create example app that uses GRiSP2? Perhaps Nerves Livebook?
 - [ ] Review Linux kernel options and compare with other systems
 - [ ] Reduce kernel prints, etc., to boot faster
+- [ ] Clean up changes to GRiSP repositories and send PRs
 
 ![GRiSP 2 image](assets/images/grisp2.jpg)
 
 | Feature              | Description                     |
 | -------------------- | ------------------------------- |
 | CPU                  | NXP iMX6ULL, ARM Cortex-A7 @ 696 MHz |
-| Memory               | 128 MB DRAM                     |
+| Memory               | 512 MB DRAM                     |
 | Storage              | 4 GB eMMC Flash and MicroSD     |
 | Linux kernel         | 4.14 w/ Phytec patches          |
 | IEx terminal         | ttyS0                           |
@@ -78,12 +79,8 @@ to boot.
     uncompress /mnt/mmc/myfirmware.img.gz /dev/mmc1
     reset
     ```
-7. On the next boot, manually boot the the Nerves firmware
-
-    ```
-    global linux.bootargs.dyn.root="root=/dev/mmcblk1p1 rootwait"
-    bootm -o /mnt/mmc1.0/boot/imx6ul-grisp2.dtb /mnt/mmc1.0/boot/zImage
-    ```
+7. Now you should be able to use `mix upload` or `./upload.sh` for subsequent
+   updates. The firmware is set to auto-validate.
 
 ## Console access
 
