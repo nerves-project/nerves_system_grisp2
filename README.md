@@ -23,9 +23,7 @@ To do:
 - [x] Check that `TARGET_GCC_FLAGS` are right
 - [ ] Update Linux kernel to 5.10
 - [ ] Update Nerves Toolchain 1.5.0 version
-- [ ] See if U-Boot works since this will be easier than porting to Barebox
-- [ ] Check that A/B firmware updates work
-- [ ] Nerves on eMMC or MicroSD? How to auto boot?
+- [ ] Implement A/B firmware updates work
 - [ ] Create example app that uses GRiSP2? Perhaps Nerves Livebook?
 - [ ] Review Linux kernel options and compare with other systems
 - [ ] Reduce kernel prints, etc., to boot faster
@@ -70,13 +68,21 @@ to boot.
 2. Create a test Nerves project or modify `circuits_quickstart` to use it. Until
    the Linux kernel is updated, you'll have to delete all other Nerves systems
    to avoid dependency conflicts on the toolchain.
-3. Build the project and burn a MicroSD card with it
-4. Boot the GRiSP2, but press a key to break into the bootloader.
-5. Run:
+3. Build the project with `mix firmware`. Then run `mix firmware.image` to get
+   an image file.
+4. gzip the image file and copy to a FAT-formatted MicroSD card
+5. Boot the GRiSP2, but press a key to break into the bootloader.
+6. Run:
 
     ```
-    global linux.bootargs.dyn.root="root=/dev/mmcblk0p2 rootwait"
-    bootm -o /mnt/mmc/oftree /mnt/mmc/zImage
+    uncompress /mnt/mmc/myfirmware.img.gz /dev/mmc1
+    reset
+    ```
+7. On the next boot, manually boot the the Nerves firmware
+
+    ```
+    global linux.bootargs.dyn.root="root=/dev/mmcblk1p1 rootwait"
+    bootm -o /mnt/mmc1.0/boot/imx6ul-grisp2.dtb /mnt/mmc1.0/boot/zImage
     ```
 
 ## Console access
@@ -90,7 +96,7 @@ TODO: Change to a UART that's doesn't require the debug daughter board.
 TODO: The GRiSP 2 includes an ATECC608A so provisioning the board for use with
 NervesHub can be done without setting U-Boot environment variables.
 
-## Linux and U-Boot versions
+## Linux versions
 
 *TBD*
 
