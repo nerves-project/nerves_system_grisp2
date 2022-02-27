@@ -232,6 +232,8 @@
 	pinctrl-names = "default";
 	dr_mode = "host";
 	vbus-supply = <&reg_usb1>;
+	/* This removes the warning about not specifying anything for over-current handling */
+	disable-over-current;
 	status = "okay";
 };
 
