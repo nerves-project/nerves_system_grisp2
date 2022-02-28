@@ -5,7 +5,7 @@
 This might be the base Nerves System configuration for the [GRiSP
 2](http://grisp.org/).
 
-*This is a work in progress and many things don't work*
+*This is a work in progress. It may change in backwards incompatible ways and the documentation might be lacking.*
 
 To do:
 
@@ -21,12 +21,12 @@ To do:
 - [ ] Add ramoops support
 - [ ] Review GRiSP2 specs to see what else there is to verify
 - [x] Check that `TARGET_GCC_FLAGS` are right
-- [ ] Update Linux kernel to 5.10
-- [ ] Update Nerves Toolchain 1.5.0 version
+- [x] Update Linux kernel to 5.10
+- [x] Update Nerves Toolchain 1.5.0 version
 - [x] Implement A/B firmware updates work
 - [ ] Create example app that uses GRiSP2? Perhaps Nerves Livebook?
 - [ ] Review Linux kernel options and compare with other systems
-- [ ] Reduce kernel prints, etc., to boot faster
+- [ ] Clean up debug and low hanging items to improve boot time
 - [ ] Clean up changes to GRiSP repositories and send PRs
 
 ![GRiSP 2 image](assets/images/grisp2.jpg)
@@ -35,18 +35,18 @@ To do:
 | -------------------- | ------------------------------- |
 | CPU                  | NXP iMX6ULL, ARM Cortex-A7 @ 696 MHz |
 | Memory               | 512 MB DRAM                     |
-| Storage              | 4 GB eMMC Flash and MicroSD     |
-| Linux kernel         | 4.14 w/ Phytec patches          |
-| IEx terminal         | ttyS0                           |
+| Storage              | 4 GB eMMC and optional MicroSD  |
+| Linux kernel         | 5.10 w/ Phytec patches          |
+| IEx terminal         | ttymxc0                         |
 | GPIO, I2C, SPI       | Yes - [Elixir Circuits](https://github.com/elixir-circuits) |
 | LEDs                 | Yes - grisp-rgb[12]-(red or blue or green) via `sys/class/leds` |
 | ADC                  | -                               |
 | PWM                  | -                               |
-| UART                 | ttyS0-ttyS4                     |
+| UART                 | ttymxc0-ttymxc5                 |
 | Camera               | None                            |
 | Ethernet             | Yes                             |
-| WiFi                 | Will be enabled when GRiSP 2 is available  |
-| HW Watchdog          | i.MX6 watchdog enabled on boot. Be sure to enable `heart` in your vm.args or the device will reboot |
+| WiFi                 | Yes - 2.4GHz                    |
+| HW Watchdog          | i.MX6 watchdog enabled on boot  |
 
 ## Using
 
@@ -84,7 +84,7 @@ to boot.
 
 ## Console access
 
-The console is configured to output to `ttyS0` by default.
+The console is configured to output to `ttymxc0` by default.
 
 TODO: Change to a UART that's doesn't require the debug daughter board.
 
