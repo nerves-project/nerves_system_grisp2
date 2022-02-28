@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.2.0
+
+This is a very early port to the GRiSP2. It runs off eMMC, supports A/B firmware
+updates like other Nerves devices, and basics like WiFi look like they work.
+
+* Dependencies
+  * [nerves_system_br v1.18.4](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.18.4)
+  * Erlang 24.2.1
+  * Linux 5.10.76 with PHYTEC kernel patches
+
 ## v0.1.0
 
 * Dependencies
