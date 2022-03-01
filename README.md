@@ -70,7 +70,7 @@ to boot.
 2. Create a test Nerves project or try `circuits_quickstart` to use it.
 3. Build the project with `mix firmware`. Then run `mix firmware.image` to get
    an image file.
-4. gzip the image file and copy to a FAT-formatted MicroSD card
+4. gzip the image file and copy to a FAT-formatted MicroSD card.
 6. Connect the GRiSP2's USB port to your computer and open up a terminal session
    (115200 8N1).
 7. Boot the GRiSP2 and press a key to break into the bootloader.
@@ -85,9 +85,21 @@ to boot.
 
 ## Console access
 
-The console is configured to output to `ttymxc0` by default.
+GRISP2 will create two virtual UART ports when plugged in. The second of these will contain a system console where you can interact with BareBox and the Elixir Shell.
+On Linux, this looks like:
 
-TODO: Change to a UART that's doesn't require the debug daughter board.
+```
+/dev/ttyUSB0
+/dev/ttyUSB1
+```
+
+You can connect via `picocom` with:
+
+```
+picocom /dev/ttyUSB1 115200
+```
+
+>NOTE: This differs from the Official GRISP2 guide in that we don't need the `--echo` flag.
 
 ## Provisioning devices
 
