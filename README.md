@@ -28,6 +28,7 @@ To do:
 - [ ] Review Linux kernel options and compare with other systems
 - [ ] Clean up debug and low hanging items to improve boot time
 - [ ] Clean up changes to GRiSP repositories and send PRs
+- [ ] Use GRiSP serial number in hostname
 
 ![GRiSP 2 image](assets/images/grisp2.jpg)
 
@@ -66,9 +67,7 @@ system, then it will probably be a little frustrating, but you'll get something
 to boot.
 
 1. Build the system
-2. Create a test Nerves project or modify `circuits_quickstart` to use it. Until
-   the Linux kernel is updated, you'll have to delete all other Nerves systems
-   to avoid dependency conflicts on the toolchain.
+2. Create a test Nerves project or try `circuits_quickstart` to use it.
 3. Build the project with `mix firmware`. Then run `mix firmware.image` to get
    an image file.
 4. gzip the image file and copy to a FAT-formatted MicroSD card
