@@ -24,7 +24,7 @@ To do:
 - [x] Update Linux kernel to 5.10
 - [x] Update Nerves Toolchain 1.5.0 version
 - [x] Implement A/B firmware updates work
-- [ ] Create example app that uses GRiSP2? Perhaps Nerves Livebook?
+- [x] Create example app that uses GRiSP2. See Circuits Quickstart and Nerves Livebook
 - [ ] Review Linux kernel options and compare with other systems
 - [ ] Clean up debug and low hanging items to improve boot time
 - [ ] Clean up changes to GRiSP repositories and send PRs
@@ -72,14 +72,16 @@ to boot.
 3. Build the project with `mix firmware`. Then run `mix firmware.image` to get
    an image file.
 4. gzip the image file and copy to a FAT-formatted MicroSD card
-5. Boot the GRiSP2, but press a key to break into the bootloader.
-6. Run:
+6. Connect the GRiSP2's USB port to your computer and open up a terminal session
+   (115200 8N1).
+7. Boot the GRiSP2 and press a key to break into the bootloader.
+8. Run:
 
     ```
     uncompress /mnt/mmc/myfirmware.img.gz /dev/mmc1
     reset
     ```
-7. Now you should be able to use `mix upload` or `./upload.sh` for subsequent
+9. Now you should be able to use `mix upload` or `./upload.sh` for subsequent
    updates. The firmware is set to auto-validate.
 
 ## Console access
