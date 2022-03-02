@@ -453,3 +453,53 @@
 		>;
 	};
 };
+
+/*
+ * Nerves additions
+ */
+#include <dt-bindings/leds/common.h>
+
+&gpio_leds_grisp2 {
+        /* Provide LEDs with colors and functions to be consistent with Linux conventions */
+	grisp-rgb1-red {
+		function = LED_FUNCTION_INDICATOR;
+		function-enumerator = <1>;
+		color = <LED_COLOR_ID_RED>;
+	};
+	grisp-rgb1-green {
+		function = LED_FUNCTION_INDICATOR;
+		function-enumerator = <1>;
+		color = <LED_COLOR_ID_GREEN>;
+	};
+	grisp-rgb1-blue {
+		function = LED_FUNCTION_INDICATOR;
+		function-enumerator = <1>;
+		color = <LED_COLOR_ID_BLUE>;
+	};
+	grisp-rgb2-red {
+		function = LED_FUNCTION_INDICATOR;
+		function-enumerator = <2>;
+		color = <LED_COLOR_ID_RED>;
+	};
+	grisp-rgb2-green {
+		function = LED_FUNCTION_INDICATOR;
+		function-enumerator = <2>;
+		color = <LED_COLOR_ID_GREEN>;
+	};
+	grisp-rgb2-blue {
+		function = LED_FUNCTION_INDICATOR;
+		function-enumerator = <2>;
+		color = <LED_COLOR_ID_BLUE>;
+	};
+};
+
+/* Allow GPIOs to be accessible to userland */
+&jumper {
+        /delete-property/ grisp,gpios;
+};
+&pmod_gpio {
+        /delete-property/ grisp,gpios;
+};
+&pin_gpio {
+        /delete-property/ grisp,gpios;
+};
