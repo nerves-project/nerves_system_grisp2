@@ -28,7 +28,7 @@ To do:
 - [ ] Review Linux kernel options and compare with other systems
 - [ ] Clean up debug and low hanging items to improve boot time
 - [ ] Clean up changes to GRiSP repositories and send PRs
-- [ ] Use GRiSP serial number in hostname
+- [x] Use GRiSP serial number in hostname
 
 ![GRiSP 2 image](assets/images/grisp2.jpg)
 
