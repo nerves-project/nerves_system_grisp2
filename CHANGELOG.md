@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.2.1
+
+This release has various Linux device tree and option updates to bootup warnings
+and allow more hardware to be accessed in Elixir.
+
+* Changes
+  * Use the serial number printed on the GRiSP board
+
+* Updated dependencies
+  * [nerves_system_br v1.18.5](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.18.5)
+
 ## v0.2.0
 
 This is a very early port to the GRiSP2. It runs off eMMC, supports A/B firmware
