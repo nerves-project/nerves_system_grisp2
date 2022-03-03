@@ -40,7 +40,7 @@ To do:
 | Linux kernel         | 5.10 w/ Phytec patches          |
 | IEx terminal         | ttymxc0                         |
 | GPIO, I2C, SPI       | Yes - [Elixir Circuits](https://github.com/elixir-circuits) |
-| LEDs                 | Yes - grisp-rgb[12]-(red or blue or green) via `sys/class/leds` |
+| LEDs                 | Yes - named `red:indicator-1`, etc. in `sys/class/leds` |
 | ADC                  | -                               |
 | PWM                  | -                               |
 | UART                 | ttymxc0-ttymxc5                 |
