@@ -218,16 +218,6 @@
 	status = "okay";
 };
 
-&mdio {
-	ethphy2: ethernet-phy@2 {
-		reg = <2>;
-		micrel,led-mode = <1>;
-		clocks = <&clks IMX6UL_CLK_ENET2_REF>;
-		clock-names = "rmii-ref";
-		status = "okay";
-	};
-};
-
 &usbotg1 {
 	pinctrl-names = "default";
 	dr_mode = "host";
