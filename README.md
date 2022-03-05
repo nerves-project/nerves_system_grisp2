@@ -18,7 +18,7 @@ To do:
 - [x] Verify MicroSD card works
 - [ ] Verify ATECC608B
 - [ ] Verify HW watchdog
-- [ ] Add ramoops support
+- [x] Add ramoops support
 - [ ] Review GRiSP2 specs to see what else there is to verify
 - [x] Check that `TARGET_GCC_FLAGS` are right
 - [x] Update Linux kernel to 5.10

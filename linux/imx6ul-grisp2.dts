@@ -485,11 +485,29 @@
 
 /* Allow GPIOs to be accessible to userland */
 &jumper {
-        /delete-property/ grisp,gpios;
+	/delete-property/ grisp,gpios;
 };
 &pmod_gpio {
-        /delete-property/ grisp,gpios;
+	/delete-property/ grisp,gpios;
 };
 &pin_gpio {
-        /delete-property/ grisp,gpios;
+	/delete-property/ grisp,gpios;
+};
+/ {
+	rmem: reserved-memory {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		ranges;
+
+		ramoops: ramoops@8ff00000 {
+			compatible = "ramoops";
+			/* Barebox uses 0x8fe00000 and up */
+			reg = <0x8f000000 0x100000>; /* 1 MB */
+			ecc-size = <16>;
+			record-size = <0x20000>; /* 128kB */
+			console-size = <0x20000>;
+			ftrace-size = <0>;
+			pmsg-size = <0x20000>;
+		};
+	};
 };
