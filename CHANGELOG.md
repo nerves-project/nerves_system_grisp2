@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.2.2
+
+* Changes
+  * Enable the `ramoops` driver to capture log messages right before an
+    unexpected reboot.
+  * Turn off unused kernel options and adjust for faster boot times and smaller
+    images.
+
 ## v0.2.1
 
 This release has various Linux device tree and option updates to bootup warnings
