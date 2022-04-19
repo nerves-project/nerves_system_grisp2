@@ -10,7 +10,7 @@ This might be the base Nerves System configuration for the [GRiSP
 To do:
 
 - [x] Bring up Ethernet
-- [x] Bring up WiFi (currently requires unreleased VintageNetWiFi)
+- [x] Bring up WiFi
 - [x] Verify RGB LEDs
 - [ ] Verify DIP switches
 - [ ] Enable 1-Wire and test
@@ -25,7 +25,7 @@ To do:
 - [x] Update Nerves Toolchain 1.5.0 version
 - [x] Implement A/B firmware updates work
 - [x] Create example app that uses GRiSP2. See Circuits Quickstart and Nerves Livebook
-- [ ] Review Linux kernel options and compare with other systems
+- [x] Review Linux kernel options and compare with other systems
 - [ ] Clean up debug and low hanging items to improve boot time
 - [ ] Clean up changes to GRiSP repositories and send PRs
 - [x] Use GRiSP serial number in hostname
@@ -46,7 +46,7 @@ To do:
 | UART                 | ttymxc0-ttymxc5                 |
 | Camera               | None                            |
 | Ethernet             | Yes                             |
-| WiFi                 | Yes - 2.4GHz                    |
+| WiFi                 | Yes - 2.4GHz station mode (no Soft-AP) (R8188EU) |
 | HW Watchdog          | i.MX6 watchdog enabled on boot  |
 
 ## Using
