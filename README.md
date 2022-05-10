@@ -37,7 +37,7 @@ To do:
 | CPU                  | NXP iMX6ULL, ARM Cortex-A7 @ 696 MHz |
 | Memory               | 512 MB DRAM                     |
 | Storage              | 4 GB eMMC and optional MicroSD  |
-| Linux kernel         | 5.10 w/ Phytec patches          |
+| Linux kernel         | 5.15 w/ Phytec patches          |
 | IEx terminal         | ttymxc0                         |
 | GPIO, I2C, SPI       | Yes - [Elixir Circuits](https://github.com/elixir-circuits) |
 | LEDs                 | Yes - named `red:indicator-1`, etc. in `sys/class/leds` |
