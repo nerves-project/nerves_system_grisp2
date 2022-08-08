@@ -12,6 +12,12 @@ follows:
    releases, and Linux kernel updates. They're also made to fix bugs and add
    features to the build infrastructure.
 
+## v0.4.1
+
+* Updated dependencies
+  * [nerves_system_br v1.20.4](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.20.4)
+  * [Erlang/OTP 25.0.3](https://erlang.org/download/OTP-25.0.3.README)
+
 ## v0.4.0
 
 This release updates to Buildroot 2022.05 and uses GCC 11.3 (from GCC 10.3).
