@@ -81,9 +81,6 @@ security fixes.
 
 ## v0.5.0
 
-* Changes
-  * Support aarch64 Linux builds
-
 * Updated dependencies
   * [nerves_system_br v1.21.1](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.21.1)
     and also see [nerves_system_br v1.21.0](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.21.0)
