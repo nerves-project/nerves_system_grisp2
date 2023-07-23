@@ -12,6 +12,14 @@ follows:
    releases, and Linux kernel updates. They're also made to fix bugs and add
    features to the build infrastructure.
 
+## v0.7.1
+
+This release enables UART, I2C, and SPI support on the PMOD interfaces. See
+`README.md` for device names.
+
+* Updated dependencies
+  * Linux 5.15.102 + Phytec patches
+
 ## v0.7.0
 
 This is a major update that brings in Erlang/OTP 26 and Buildroot 2023.02.2.
