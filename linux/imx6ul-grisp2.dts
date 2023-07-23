@@ -493,10 +493,32 @@
 &pin_gpio {
 	/delete-property/ grisp,gpios;
 };
+/* Associate pinmux settings for PMOD I/O */
 &uart4 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_uart4>;
 	status = "okay";
+};
+&i2c2 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_i2c2>;
+	status = "okay";
+};
+&ecspi1 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_spi0>;
+	status = "okay";
+	/* Fake SPI devices for /dev/spidev support */
+	spidev@0 {
+		compatible = "menlo,m53cpld";
+		spi-max-frequency = <25000000>;
+		reg = <0>;
+	};
+	spidev@1 {
+		compatible = "menlo,m53cpld";
+		spi-max-frequency = <25000000>;
+		reg = <1>;
+	};
 };
 / {
 	rmem: reserved-memory {
