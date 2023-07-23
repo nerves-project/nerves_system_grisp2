@@ -493,6 +493,11 @@
 &pin_gpio {
 	/delete-property/ grisp,gpios;
 };
+&uart4 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_uart4>;
+	status = "okay";
+};
 / {
 	rmem: reserved-memory {
 		#address-cells = <1>;
