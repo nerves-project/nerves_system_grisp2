@@ -101,6 +101,16 @@ picocom /dev/ttyUSB1 115200
 
 >NOTE: This differs from the Official GRISP2 guide in that we don't need the `--echo` flag.
 
+## PMOD usage
+
+The GRiSP 2 has five PMOD interfaces. GPIO pins should all be accessible. Pins
+for other functions are configured for those functions:
+
+* UART PMOD - access the UART pins via `ttymcx3`
+* I2C PMOD - access I2C via `i2c-1`
+* SPI1 PMOD - access SPI via `spidev0.0`
+* SPI2 PMOD - access SPI via `spidev0.1`
+
 ## Provisioning devices
 
 TODO: The GRiSP 2 includes an ATECC608A so provisioning the board for use with
