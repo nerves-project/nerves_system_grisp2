@@ -1,8 +1,10 @@
 # GRiSP 2 Support
 
-[![CircleCI](https://circleci.com/gh/nerves-project/nerves_system_grisp2.svg?style=svg)](https://circleci.com/gh/nerves-project/nerves_system_grisp2)[![Hex version](https://img.shields.io/hexpm/v/nerves_system_grisp2.svg "Hex version")](https://hex.pm/packages/nerves_system_grisp2)
+[![Hex version](https://img.shields.io/hexpm/v/nerves_system_grisp2.svg "Hex version")](https://hex.pm/packages/nerves_system_grisp2)
+[![CI](https://github.com/nerves-project/nerves_system_grisp2/actions/workflows/ci.yml/badge.svg)](https://github.com/nerves-project/nerves_system_grisp2/actions/workflows/ci.yml)
+[![REUSE status](https://api.reuse.software/badge/github.com/nerves-project/nerves_system_grisp2)](https://api.reuse.software/info/github.com/nerves-project/nerves_system_grisp2)
 
-This might be the base Nerves System configuration for the [GRiSP
+This is the base Nerves System configuration for the [GRiSP
 2](http://grisp.org/).
 
 *This is a work in progress. It may change in backwards incompatible ways and the documentation might be lacking.*
@@ -29,8 +31,6 @@ To do:
 - [ ] Clean up debug and low hanging items to improve boot time
 - [ ] Clean up changes to GRiSP repositories and send PRs
 - [x] Use GRiSP serial number in hostname
-
-![GRiSP 2 image](assets/images/grisp2.jpg)
 
 | Feature              | Description                     |
 | -------------------- | ------------------------------- |
