@@ -4,8 +4,8 @@
  */
 
 /dts-v1/;
-#include "imx6ull.dtsi"
-#include "imx6ull-phytec-phycore-som.dtsi"
+#include "nxp/imx/imx6ull.dtsi"
+#include "nxp/imx/imx6ull-phytec-phycore-som.dtsi"
 
 / {
 	model = "GRiSP2";
