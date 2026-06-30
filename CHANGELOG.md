@@ -17,7 +17,7 @@ follows:
 * Updated dependencies
   * [nerves_system_br v1.34.0 release notes](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.34.0)
   * [Erlang/OTP 29.0.2](https://erlang.org/download/OTP-29.0.2.README.md)
-  * [Buildroot 2025.05.2](https://lore.kernel.org/buildroot/7bed9b2e-a9d3-476b-84d6-61134e2f726f@rnout.be/T/)
+  * [Buildroot 2026.05](https://lore.kernel.org/buildroot/87fr2wpxhj.fsf@dell.be.48ers.dk/T/)
 
 ## v0.17.5
 
